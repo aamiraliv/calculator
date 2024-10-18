@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        width:100%;
+        background-image: linear-gradient( to right, #9796f0, #fbc7d4);
+    }
+    .container{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        row-gap: 10px;
+        column-gap: 10px;
+
+        width: 400px;
+        height: auto;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #ffffff;
+        margin: 50px auto;
+    }
+    button{
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        font-size: 20px;
+        text-transform: capitalize;
+
+    }
+    button:active{
+        
+    }
+</style>
+<body>
+    <div class="container">
+        <input value="0" type="text" id="result" style="grid-column: 1 / 5; padding: 20px; border: 5px solid orange ; background-color: transparent; border-radius: 30px; font-size: 20px; color: rgb(0, 0, 0); font-family: arial;" readonly>
+
+        <button onclick="
+            calculation += '1';
+            resulthtml();
+            ">1</button>
+
+        <button onclick="
+            calculation += '2';
+            resulthtml();
+            ">2</button>
+
+        <button onclick="
+            calculation += '3';
+            resulthtml();
+            ">3</button>
+
+        <button style="color: rgb(0, 0, 0); font-weight: 700; background-color: greenyellow;" onclick="
+            calculation += '+';
+            resulthtml();
+            ">+</button>
+
+        <button onclick="
+            calculation += '4';
+            resulthtml();
+            ">4</button>
+
+        <button onclick="
+            calculation += '5';
+            resulthtml();
+            ">5</button>
+
+        <button onclick="
+            calculation += '6';
+            resulthtml();
+            ">6</button>
+
+        <button style="color: rgb(0, 0, 0); font-weight: 700; background-color: greenyellow;font-size: 20px;" onclick="
+            calculation += '-';
+            resulthtml();
+            ">-</button>
+
+        <button onclick="
+            calculation += '7';
+            resulthtml();
+            ">7</button>
+        
+        <button onclick="
+            calculation += '8';
+            resulthtml();
+            ">8</button>
+
+        <button onclick="
+            calculation += '9';
+            resulthtml();
+            ">9</button>
+
+        <button style="color: rgb(0, 0, 0); font-weight: 700; background-color: greenyellow; font-size: 18px;" onclick="
+            calculation += '*';
+            resulthtml();
+            ">x</button>
+
+        <button onclick="
+            calculation += '0';
+            resulthtml();
+            ">0</button>
+
+        <button style="color: rgb(0, 0, 0); font-weight: 700; background-color: greenyellow;font-size: 20px;" onclick="
+            calculation += '/';
+            resulthtml();
+            ">/</button>
+
+        <button  style=" grid-column: 3 / 5 ; color: rgb(0, 0, 0); font-weight: 700; background-color: greenyellow;" onclick="
+            calculation = eval(calculation);
+            resulthtml();
+            ">=</button>
+
+        <button style="grid-column: 1 / 5; background-color: orange; color: black;" onclick="
+            calculation = '';
+            resulthtml();
+            ">clear</button>
+    </div>
+    <script>
+        let calculation = '';
+        function resulthtml() {
+            document.getElementById("result").value = calculation ;
+        }
+    </script>
+</body>
+</html>
